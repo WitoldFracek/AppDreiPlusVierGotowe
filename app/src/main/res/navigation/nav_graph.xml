@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.appdreiplusvier.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/RGBTabsFragment"
+        android:name="com.example.appdreiplusvier.RGBTabsFragment"
+        android:label="RGBTabsFragment" />
+
+    <action android:id="@+id/action_global_RGBTabsFragment"
+        app:destination="@id/RGBTabsFragment"
+        app:launchSingleTop ="true"
+        app:popUpTo="@id/homeFragment"/>
+
+    <action android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:launchSingleTop ="true"
+        app:popUpTo="@id/homeFragment"/>
+    <fragment
+        android:id="@+id/unusedFragment"
+        android:name="com.example.appdreiplusvier.UnusedFragment"
+        android:label="fragment_unused"
+        tools:layout="@layout/fragment_unused" />
+    <action android:id="@+id/action_global_unusedFragment"
+        app:destination="@id/unusedFragment"
+        app:launchSingleTop ="true"
+        app:popUpTo="@id/homeFragment"/>
+    <fragment
+        android:id="@+id/imageSwapFragment"
+        android:name="com.example.appdreiplusvier.ImageSwapFragment"
+        android:label="fragment_image_swap"
+        tools:layout="@layout/fragment_image_swap" />
+    <action android:id="@+id/action_global_imageSwapFragment"
+        app:destination="@id/imageSwapFragment"
+        app:launchSingleTop ="true"
+        app:popUpTo="@id/homeFragment"/>
+</navigation>

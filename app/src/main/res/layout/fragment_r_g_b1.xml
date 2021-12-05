@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    tools:context=".RGBFragment1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="544dp"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/rgb1_invitation"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="116dp"
+            android:gravity="center"
+            android:text="@string/rgb_frag_invitation"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/input_invitation"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgb1_invitation" />
+
+        <TextView
+            android:id="@+id/rgb_frag_other_info"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="23dp"
+            android:gravity="center"
+            android:text="@string/rgb_frag_other_info"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_invitation" />
+
+        <EditText
+            android:id="@+id/input_other_info"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgb_frag_other_info" />
+
+        <Button
+            android:id="@+id/rgb_frag_save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <SeekBar
+            android:id="@+id/red_bar"
+            android:layout_width="182dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/input_other_info" />
+
+        <SeekBar
+            android:id="@+id/blue_bar"
+            android:layout_width="182dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/green_bar" />
+
+        <SeekBar
+            android:id="@+id/green_bar"
+            android:layout_width="182dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/red_bar" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="336dp"
+            android:text="R"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="G"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="B"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/color_screen"
+            android:layout_width="142dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/red_bar"
+            app:layout_constraintTop_toBottomOf="@+id/input_other_info" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

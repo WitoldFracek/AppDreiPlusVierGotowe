@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AppDreiPlusVier</string>
+    <string name="nav_but_1_title">Home</string>
+    <string name="nav_but_2_title">RGB</string>
+    <string name="nav_but_3_title">Other</string>
+    <string name="nav_but_4_title">Pics</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invitation">Herzlich willkommen!</string>
+    <string name="home_fragment_note">Wussten Sie, dass das längste deutsche Word, das ich kenne, ist Panzerkampfvagenfahrkarten?</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="rgb_frag_invitation">invitation</string>
+    <string name="rgb_frag_other_info">other info:</string>
+    <string name="save">Save</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_but_1"
+        android:icon="@drawable/home_screen_foreground"
+        android:title="@string/nav_but_1_title" />
+    <item
+        android:id="@+id/nav_but_2"
+        android:icon="@drawable/rgb"
+        android:title="@string/nav_but_2_title" />
+    <item
+        android:id="@+id/nav_but_3"
+        android:icon="@drawable/circle_foreground"
+        android:title="@string/nav_but_3_title" />
+    <item
+        android:id="@+id/nav_but_4"
+        android:icon="@drawable/image_foreground"
+        android:title="@string/nav_but_4_title" />
+</menu>
