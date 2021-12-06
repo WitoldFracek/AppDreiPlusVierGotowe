@@ -13,13 +13,13 @@ private const val IMG_INDEX = "param1"
 
 class ImageSwapFragment : Fragment() {
     private var imgIndex: Int? = null
-    private var previousImgIndex: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             imgIndex = it.getInt(IMG_INDEX)
         }
+        MainActivity.supActBar?.setDisplayHomeAsUpEnabled(true)
 
     }
 
