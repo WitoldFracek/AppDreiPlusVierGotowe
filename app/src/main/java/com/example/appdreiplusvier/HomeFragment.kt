@@ -85,8 +85,10 @@ class HomeFragment : Fragment() {
         parentFragmentManager.setFragmentResultListener(Storage.COLOR_ID, viewLifecycleOwner) { key, bundle ->
             val storedColor = bundle.getString(Storage.COLOR_STRING, "#FFFFFFFF") as String
             val storedInvitation = bundle.getString(Storage.INVITATION_TEXT, "Herzlich willkommen!")
-            val storedOtherTet = bundle.getString(Storage.OTHER_TEXT, "")
+            val storedOtherText = bundle.getString(Storage.OTHER_TEXT, "")
             layout.setBackgroundColor(Color.parseColor(storedColor))
+            invText.text = storedInvitation
+            otherText.text = storedOtherText
         }
 
     }

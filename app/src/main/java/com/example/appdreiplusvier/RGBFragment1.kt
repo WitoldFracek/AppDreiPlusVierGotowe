@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val IDENTIFIER = "rgb_frag1"
 private const val TITLE = "title"
@@ -68,6 +70,42 @@ class RGBFragment1 : Fragment() {
 
         canvas.text = "#${Storage.loadStringData(requireActivity(), Storage.HOME_BACKGROUD_COLOR, "#FFFFFFFF").substring(3)}"
 
+        otherInfo.setOnKeyListener { _, _, _ ->
+            val red = RGBConverter.map(redBar.progress, 0, 100, 0, 255)
+            val green = RGBConverter.map(greenBar.progress, 0, 100, 0, 255)
+            val blue = RGBConverter.map(blueBar.progress, 0 , 100, 0, 255)
+            val color = RGBConverter.toHex(red, green, blue)
+            val myBundle = Bundle()
+
+            val newInvitation = invitation.text.toString()
+            val newOther = otherInfo.text.toString()
+
+            myBundle.putString(Storage.COLOR_STRING, color)
+            myBundle.putString(Storage.INVITATION_TEXT, newInvitation)
+            myBundle.putString(Storage.OTHER_TEXT, newOther)
+
+            parentFragmentManager.setFragmentResult(Storage.COLOR_ID, myBundle)
+            true
+        }
+
+        invitation.setOnKeyListener { _, _, _ ->
+            val red = RGBConverter.map(redBar.progress, 0, 100, 0, 255)
+            val green = RGBConverter.map(greenBar.progress, 0, 100, 0, 255)
+            val blue = RGBConverter.map(blueBar.progress, 0 , 100, 0, 255)
+            val color = RGBConverter.toHex(red, green, blue)
+            val myBundle = Bundle()
+
+            val newInvitation = invitation.text.toString()
+            val newOther = otherInfo.text.toString()
+
+            myBundle.putString(Storage.COLOR_STRING, color)
+            myBundle.putString(Storage.INVITATION_TEXT, newInvitation)
+            myBundle.putString(Storage.OTHER_TEXT, newOther)
+
+            parentFragmentManager.setFragmentResult(Storage.COLOR_ID, myBundle)
+            true
+        }
+
         redBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 val red = RGBConverter.map(progress, 0, 100, 0, 255)
@@ -76,6 +114,17 @@ class RGBFragment1 : Fragment() {
                 val color = RGBConverter.toHex(red, green, blue)
                 canvas.setBackgroundColor(Color.parseColor(color))
                 canvas.text = "#${color.substring(3)}"
+
+                val myBundle = Bundle()
+
+                val newInvitation = invitation.text.toString()
+                val newOther = otherInfo.text.toString()
+
+                myBundle.putString(Storage.COLOR_STRING, color)
+                myBundle.putString(Storage.INVITATION_TEXT, newInvitation)
+                myBundle.putString(Storage.OTHER_TEXT, newOther)
+
+                parentFragmentManager.setFragmentResult(Storage.COLOR_ID, myBundle)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) { }
@@ -90,6 +139,17 @@ class RGBFragment1 : Fragment() {
                 val color = RGBConverter.toHex(red, green, blue)
                 canvas.setBackgroundColor(Color.parseColor(color))
                 canvas.text = "#${color.substring(3)}"
+
+                val myBundle = Bundle()
+
+                val newInvitation = invitation.text.toString()
+                val newOther = otherInfo.text.toString()
+
+                myBundle.putString(Storage.COLOR_STRING, color)
+                myBundle.putString(Storage.INVITATION_TEXT, newInvitation)
+                myBundle.putString(Storage.OTHER_TEXT, newOther)
+
+                parentFragmentManager.setFragmentResult(Storage.COLOR_ID, myBundle)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) { }
@@ -104,6 +164,17 @@ class RGBFragment1 : Fragment() {
                 val color = RGBConverter.toHex(red, green, blue)
                 canvas.setBackgroundColor(Color.parseColor(color))
                 canvas.text = "#${color.substring(3)}"
+
+                val myBundle = Bundle()
+
+                val newInvitation = invitation.text.toString()
+                val newOther = otherInfo.text.toString()
+
+                myBundle.putString(Storage.COLOR_STRING, color)
+                myBundle.putString(Storage.INVITATION_TEXT, newInvitation)
+                myBundle.putString(Storage.OTHER_TEXT, newOther)
+
+                parentFragmentManager.setFragmentResult(Storage.COLOR_ID, myBundle)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) { }
@@ -111,7 +182,6 @@ class RGBFragment1 : Fragment() {
         })
 
         saveButton.setOnClickListener { _ ->
-            val myBundle = Bundle()
             val red = RGBConverter.map(redBar.progress, 0, 100, 0, 255)
             val green = RGBConverter.map(greenBar.progress, 0, 100, 0, 255)
             val blue = RGBConverter.map(blueBar.progress, 0, 100, 0, 255)
@@ -120,9 +190,6 @@ class RGBFragment1 : Fragment() {
             val newInvitation = invitation.text.toString()
             val newOther = otherInfo.text.toString()
 
-            myBundle.putString(Storage.COLOR_STRING, color)
-            myBundle.putString(Storage.INVITATION_TEXT, newInvitation)
-            myBundle.putString(Storage.OTHER_TEXT, newOther)
 
             val sharedPrefs = requireActivity().getSharedPreferences(Storage.SHARED_PREFS, Context.MODE_PRIVATE)
             val editor = sharedPrefs.edit()
@@ -133,12 +200,10 @@ class RGBFragment1 : Fragment() {
             editor.putInt(Storage.GREEN_VAL, greenBar.progress)
             editor.putInt(Storage.BLUE_VAL, blueBar.progress)
             editor.apply()
-
-            parentFragmentManager.setFragmentResult(Storage.COLOR_ID, myBundle)
         }
 
-    }
 
+    }
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =

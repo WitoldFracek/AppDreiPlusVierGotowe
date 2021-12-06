@@ -20,7 +20,7 @@ class UnusedFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        MainActivity.supActBar?.setDisplayHomeAsUpEnabled(true)
+        MainActivity.supActBar?.setDisplayHomeAsUpEnabled(false)
     }
 
     override fun onCreateView(

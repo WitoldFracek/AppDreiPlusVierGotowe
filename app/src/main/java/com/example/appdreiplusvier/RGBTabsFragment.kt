@@ -1,5 +1,6 @@
 package com.example.appdreiplusvier
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -49,8 +50,14 @@ class RGBTabsFragment : Fragment() {
             tab.text = "TAB ${position + 1}"
         }.attach()
 
+        childFragmentManager.setFragmentResultListener(Storage.COLOR_ID, viewLifecycleOwner) { key, bundle ->
+            parentFragmentManager.setFragmentResult(Storage.COLOR_ID, bundle)
+        }
+
 
     }
+
+
 
     companion object {
         @JvmStatic
